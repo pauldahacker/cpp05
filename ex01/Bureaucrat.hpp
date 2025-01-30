@@ -4,9 +4,12 @@
 # include <iostream>
 # include <string>
 # include <stdexcept>
+# include "Form.hpp"
 
 # define MAX_GRADE 1
 # define MIN_GRADE 150
+
+class Form;
 
 class Bureaucrat
 {
@@ -26,6 +29,7 @@ class Bureaucrat
 		int getGrade(void) const;
 		void incrementGrade(void);
 		void decrementGrade(void);
+		void signForm(Form &form) const;
 
 	private:
 		const std::string _name;
