@@ -1,76 +1,48 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
-	Bureaucrat basic("Paul", 42);
-	Bureaucrat high("High", 2);
-	Bureaucrat low("Low", 149);
+	Bureaucrat basic("Paul", 46);
+	Bureaucrat high("High", 6);
+	Bureaucrat low("Low", 138);
 	std::cout << "--------------------------------------------" << std::endl;
 	AForm *shrub = new ShrubberyCreationForm("home");
-	basic.signAForm(*shrub);
-	shrub->execute(basic);
-	/*
+	std::cout << "Testing execution with: " << low << std::endl;
+	low.executeForm(*shrub);
+	low.signForm(*shrub);
+	low.executeForm(*shrub);
+	low.incrementGrade();
+	std::cout << low << std::endl;
+	low.executeForm(*shrub);
+	delete shrub;
 	std::cout << "--------------------------------------------" << std::endl;
-	// Testing insertion operator overload <<
-	std::cout << lowAForm << std::endl;
-	std::cout << highAForm << std::endl;
+	AForm *robo = new RobotomyRequestForm("Bruce Lee");
+	std::cout << "Testing execution with: " << basic << std::endl;
+	basic.executeForm(*robo);
+	basic.signForm(*robo);
+	basic.executeForm(*robo);
+	basic.incrementGrade();
+	std::cout << basic << std::endl;
+	std::cout << "Testing 50% robotomy success: " << std::endl;
+	for (int i = 0; i < 4; ++i)
+	{
+		std::cout << "[" << i << "] ";
+		basic.executeForm(*robo);
+	}
+	delete robo;
 	std::cout << "--------------------------------------------" << std::endl;
-	AForm copyAForm(lowAForm); // Testing copy constructor
-	std::cout << copyAForm << std::endl;
+	AForm *pres = new PresidentialPardonForm("Tiger King");
+	std::cout << "Testing execution with: " << high << std::endl;
+	high.executeForm(*pres);
+	high.signForm(*pres);
+	high.executeForm(*pres);
+	high.incrementGrade();
+	std::cout << high << std::endl;
+	high.executeForm(*pres);
+	delete pres;
 	std::cout << "--------------------------------------------" << std::endl;
-	// Testing construction with invalid grades (< 1)
-	try
-	{
-		AForm c("Bad signature grade", 0, 42);
-		std::cout << c << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		AForm d("Bad execution grade", 42, 0);
-		std::cout << d << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << "--------------------------------------------" << std::endl;
-	// Testing construction with invalid grades (> 150)
-	try
-	{
-		AForm c("Bad signature grade", 151, 42);
-		std::cout << c << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		AForm d("Bad execution grade", 42, 151);
-		std::cout << d << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << "--------------------------------------------" << std::endl;
-	basic.signAForm(highAForm); // doesn't work, GradeTooLowException
-	high.signAForm(highAForm); // should work, grade is high enough
-	std::cout << "--------------------------------------------" << std::endl;
-	// Testing signAForm for double signature
-	low.signAForm(lowAForm); // should work
-	high.signAForm(lowAForm); // doesn't work, AlreadySignedException
-	std::cout << "--------------------------------------------" << std::endl;
-	// Testing copy assignment operator
-	std::cout << "Before copy assignment operator: " << copyAForm << std::endl;
-	copyAForm = lowAForm;
-	std::cout << "After copy assignment operator: " << copyAForm << std::endl;
-	std::cout << "--------------------------------------------" << std::endl;
-	*/
 	return (0);
-}
+} 

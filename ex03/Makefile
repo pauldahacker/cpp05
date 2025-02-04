@@ -4,15 +4,15 @@ BLUE = \033[0;94m
 DEF_COLOR = \033[0;39m
 GREEN =	\033[0;92m
 
-NAME = abstract
+NAME = intern
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp \
-	RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+	RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 
 SRC = Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
-	RobotomyRequestForm.cpp PresidentialPardonForm.cpp main.cpp
+	RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
