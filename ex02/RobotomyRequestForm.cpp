@@ -33,16 +33,16 @@ const RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestF
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-    static bool is_successful = true;
+	static bool is_successful = true;
 
 	try
 	{
 		beExecuted(executor);
 		if (is_successful)
-            std::cout << "<" << _target << "> has been robotomized successfully!" << std::endl;
-        else
-            std::cout << "<" << _target << "> failed their robotomy..." << std::endl;
-        is_successful = !is_successful;
+			std::cout << "<" << _target << "> has been robotomized successfully!" << std::endl;
+		else
+			std::cout << "<" << _target << "> failed their robotomy..." << std::endl;
+		is_successful = !is_successful;
 	}
 	catch(const std::exception& e)
 	{
