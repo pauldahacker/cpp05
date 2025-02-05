@@ -1,5 +1,15 @@
 #include "Intern.hpp"
 
+class Intern::FormDoesNotExistException : public std::exception
+{
+	public:
+		virtual const char* what() const throw()
+		{
+			return ("Form does not exist!");
+		}
+};
+
+
 Intern::Intern(void)
 {
     std::cout << "Default Intern constructor called" << std::endl;
@@ -43,7 +53,7 @@ AForm *Intern::makeForm(std::string name, std::string target)
             return new PresidentialPardonForm(target);
         default:
             std::cerr << "Intern couldn't create <" << name
-                << " form>. It doesn't exist!" << std::endl;
-            return nullptr;
+                << ">. Form does not exist!" << std::endl;
+            return (NULL);
     }
 }

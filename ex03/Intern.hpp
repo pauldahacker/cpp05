@@ -20,8 +20,12 @@ class Intern
 
         const Intern &operator=(const Intern &other);
 
-        void searchForm(std::string name);
+        // Form Creation Exception
+		class FormDoesNotExistException;
+        // Member function
         AForm *makeForm(std::string name, std::string target);
+    private:
+        void searchForm(std::string name);
 };
 
 #endif

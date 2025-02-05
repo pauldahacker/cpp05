@@ -22,8 +22,6 @@ class AForm
 		// Execution Exceptions
 		class NotSignedException;
 		class ExecGradeTooLowException;
-		// Form Creation Exceptions
-		class FormDoesNotExistException;
 		// Member functions
 		std::string getName(void) const;
 		bool getSigned(void) const;
