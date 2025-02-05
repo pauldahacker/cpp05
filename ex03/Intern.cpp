@@ -1,15 +1,5 @@
 #include "Intern.hpp"
 
-class Intern::FormDoesNotExistException : public std::exception
-{
-	public:
-		virtual const char* what() const throw()
-		{
-			return ("Form does not exist!");
-		}
-};
-
-
 Intern::Intern(void)
 {
 	std::cout << "Default Intern constructor called" << std::endl;

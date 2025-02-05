@@ -24,8 +24,6 @@ class Intern
 		class FormDoesNotExistException;
 		// Member function
 		AForm *makeForm(std::string name, std::string target);
-	private:
-		void searchForm(std::string name);
 };
 
 #endif
