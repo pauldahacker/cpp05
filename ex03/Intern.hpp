@@ -13,19 +13,19 @@
 
 class Intern
 {
-    public:
-        Intern(void);
-        Intern(const Intern &other);
-        ~Intern(void);
+	public:
+		Intern(void);
+		Intern(const Intern &other);
+		~Intern(void);
 
-        const Intern &operator=(const Intern &other);
+		const Intern &operator=(const Intern &other);
 
-        // Form Creation Exception
+		// Form Creation Exception
 		class FormDoesNotExistException;
-        // Member function
-        AForm *makeForm(std::string name, std::string target);
-    private:
-        void searchForm(std::string name);
+		// Member function
+		AForm *makeForm(std::string name, std::string target);
+	private:
+		void searchForm(std::string name);
 };
 
 #endif
