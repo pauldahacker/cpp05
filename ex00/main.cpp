@@ -11,11 +11,6 @@ int main(void)
 	std::cout << low << std::endl;
 	std::cout << high << std::endl;
 	std::cout << "--------------------------------------------" << std::endl;
-	Bureaucrat copy(low); // Testing copy constructor
-	std::cout << copy << std::endl;
-	copy = basic; // Testing copy assignment operator
-	std::cout << copy << std::endl;
-	std::cout << "--------------------------------------------" << std::endl;
 	// Testing construction with invalid grade (< 1)
 	try
 	{
